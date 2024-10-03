@@ -1,0 +1,23 @@
+def no_to_base(no,base):
+    ans=''
+    while no:
+        ans=str(no%base)+ans
+        no=no//base
+    return int(ans)
+
+def ispalindrome(n):
+    n=str(n)
+    if n==n[::-1]:
+        return True
+    else:
+        return False
+item=input().split()
+n=int(item[0])
+k=int(item[1])
+
+req_sum=0
+for i in range(1,n):
+    if ispalindrome(i) and ispalindrome(no_to_base(i,k)):
+        req_sum+=i
+        
+print(req_sum)
